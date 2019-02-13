@@ -1,9 +1,9 @@
 {
   "name": "tinyapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "express_server.js",
   "scripts": {
+    "start": "./node_modules/.bin/nodemon -L express_server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "binduprakash",
@@ -11,6 +11,19 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
+    "expres": "0.0.5",
     "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binduprakash/TinyApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/binduprakash/TinyApp/issues"
+  },
+  "homepage": "https://github.com/binduprakash/TinyApp#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
