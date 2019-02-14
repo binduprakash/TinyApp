@@ -5,3 +5,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>TinyApp</title>
   <h1>TinyApp</h1>
+  <% if (username) { %>
+  Logged In As : <%= username %>
+  <form class="form-inline" action="/logout" method="POST">
+    <div class="form-group mb-2">
+    <button type="submit" class="btn btn-primary">Logout</button>
+    </div>
+
+  </form>
+  <% } else {%>
+  <form class="form-inline" action="/login" method="POST">
+      <div class="form-group mb-2">
+      <label for="username">Username:</label>
+        <input class="form-control" type="text" name="username"  style="width: 300px; margin: 1em"/>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  <% } %>
