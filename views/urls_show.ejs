@@ -4,13 +4,12 @@
   <% include ./partials/_header %>
 </head>
 <body style="font-size:20px; padding:50px;">
-    <!-- Add EJS code here -->
     <h4>
     ShortURL: <%= shortURL %>
     </h4>
     <form class="form-inline" action="/urls/<%= shortURL %>" method="POST">
       <div class="form-group mb-2">
-        <input class="form-control" type="text" name="longURL"  value= <%= longURL %> style="width: 300px; margin: 1em">
+        <input class="form-control" type="text" name="longURL"  value= <%= longURL %> style="width: 300px">
         <button type="submit" class="btn btn-primary">Update</button>
       </div>
     </form>

@@ -3,22 +3,21 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
   <title>TinyApp</title>
   <h1>TinyApp</h1>
-  <% if (username) { %>
-  Logged In As : <%= username %>
-  <form class="form-inline" action="/logout" method="POST">
-    <div class="form-group mb-2">
-    <button type="submit" class="btn btn-primary">Logout</button>
-    </div>
 
-  </form>
-  <% } else {%>
-  <form class="form-inline" action="/login" method="POST">
+  <!-- if user is logged in -->
+  <% if (user) { %>
+  <a href="/urls">URLs</a> | <a href="/urls/new">Create New TinyURL</a>
+    <br/>
+    Logged In As : <%= user.email %>
+    <form class="form-inline" action="/logout" method="POST">
       <div class="form-group mb-2">
-      <label for="username">Username:</label>
-        <input class="form-control" type="text" name="username"  style="width: 300px; margin: 1em"/>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary">Logout</button>
       </div>
     </form>
+  <!-- if user is not logged in -->
+  <% } else {%>
+    <a href="/login">Login</a> | <a href="/register">Register</a>
   <% } %>
