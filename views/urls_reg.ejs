@@ -7,13 +7,29 @@
     <h3>Create Account</h3>
     <form class="form-inline" action="/register" method="POST">
       <div class="form-group mb-2">
-        <label for="email">Email</label>
-        <input class="form-control" type="email" name="email"
-        style="width: 300px">
-        <label for="password">Password</label>
-        <input class="form-control" type="password" name="password"
-          style="width: 300px">
-        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Register</button>
+        <table>
+          <tr>
+            <td style="text-align: left; width: 120px;">
+              Email
+            </td>
+            <td>
+              <input class="form-control" type="email" name="email" style="width: 300px">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Password
+            </td>
+            <td>
+              <input class="form-control" type="password" name="password" style="width: 300px">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Register</button>
+            </td>
+          </tr>
+        </table>
       </div>
     </form>
   </body>

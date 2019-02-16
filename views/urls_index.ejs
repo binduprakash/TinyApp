@@ -21,10 +21,10 @@
               <%= urls[key].longURL %>
             </td>
             <td>
-              <a href='#'> <%= key %> </a>
+              <a href="/u/<%= key %>"> <%= key %> </a>
             </td>
             <td>
-              <a href='#'> Edit </a>
+              <a href="/urls/<%= key %>"> Edit </a>
             </td>
             <td>
               <form class="form-inline" action="/urls/<%=key%>/delete"method="POST">
@@ -37,7 +37,7 @@
       </table>
     <% } else { %>
       <br/>
-      Please login to see URLs
+      Please login to see all URLs
     <% } %>
 </body>
 </html>
