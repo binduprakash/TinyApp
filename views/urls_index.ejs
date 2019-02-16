@@ -4,38 +4,41 @@
   <% include ./partials/_header %>
 </head>
 <body style="font-size:20px; padding:50px;">
-    <!-- Add EJS code here -->
-    <table>
-      <th>
-        Full URL
-      </th>
-      <th>
-        Shortened URL
-      </th>
-      <th>
-        Action
-      </th>
-    <% for(var key in urls){ %>
-      <tr>
-        <td>
-      <%= urls[key] %>
-        </td>
-        <td>
-      <a href='#'> <%= key %> </a>
-      </td>
-      <td>
-        <a href='#'> Edit </a>
-      </td>
-
-      <td>
-        <form class="form-inline" action="/urls/<%=key%>/delete"method="POST">
-      <div class="form-group mb-2">
-        <button type="submit" class="btn btn-primary">Delete</button>
-      </div>
-    </form>
-      </td>
-      <% } %>
+    <% if(user) { %>
+      <table>
+        <th>
+          Full URL
+        </th>
+        <th>
+          Shortened URL
+        </th>
+        <th>
+          Action
+        </th>
+        <% for(var key in urls){ %>
+          <tr>
+            <td>
+              <%= urls[key].longURL %>
+            </td>
+            <td>
+              <a href='#'> <%= key %> </a>
+            </td>
+            <td>
+              <a href='#'> Edit </a>
+            </td>
+            <td>
+              <form class="form-inline" action="/urls/<%=key%>/delete"method="POST">
+                <div class="form-group mb-2">
+                <button type="submit" class="btn btn-primary">Delete</button>
+                </div>
+              </form>
+            </td>
+        <% } %>
       </table>
+    <% } else { %>
+      <br/>
+      Please login to see URLs
+    <% } %>
 </body>
 </html>
 
