@@ -121,13 +121,13 @@ app.get("/urls/:shortURL", (req, res) => {
   let shortURL = req.params.shortURL;
   let userId = req.session.user_id;
   let url = urlDatabase[shortURL];
-  if (!(shortURL in urlDatabase)){
-    res.status(400).send({
-      message: 'Could not find matching Long URL'
-    });
-  } else if (!userId) {
+  if (!userId) {
     res.status(400).send({
       message: 'Please Login to access URL'
+    });
+  } else if (!(shortURL in urlDatabase)){
+    res.status(400).send({
+      message: 'Could not find matching Long URL'
     });
   } else if (url.userID != userId){
     res.status(400).send({
@@ -231,10 +231,6 @@ app.post("/urls/:shortURL/delete", (req, res) => {
   } else if (url.userID != userId){
     res.status(400).send({
       message: 'Not authorized to delete this URL'
-    });
-  } else if(urlDatabase[shortURL].userID != userId){
-    res.status(400).send({
-      message: "You are not authorized to delete this URL"
     });
   } else {
     delete urlDatabase[shortURL];
