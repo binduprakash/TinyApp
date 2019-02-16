@@ -1,10 +1,10 @@
 # TinyApp Project
 
 TinyApp is a full stack web application built with Node and Express that allows users to
-shorten long URLs. 
+shorten long URLs.
 
 Highlights of this app:
-- Registeration and User Login.
+- Registration and User Login.
 - Secured Password mechanism. 
 - 6 character length shorten URL. 
 - Existing Long URL can be modified. 
